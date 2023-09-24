@@ -1,4 +1,27 @@
-import { render, html } from './lib/lit-html.js';
+import * as api from './data/api.js';
+
+window.api = api;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* import { render, html } from './lib/lit-html.js';
 import { until } from './lib/directives/until.js';
 
 import page from './lib/page.mjs';
@@ -16,4 +39,4 @@ function home() {
 }
 
 page('/', home);
-page.start();
+page.start(); */

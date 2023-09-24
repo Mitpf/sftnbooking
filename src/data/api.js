@@ -33,7 +33,7 @@ async function request(method, url, data) {
 
         if (response.ok != true) {
             console.log(result);
-            throw new Error(result.message);
+            throw new Error(result.message || result.error);
         }
 
         return result;
@@ -50,30 +50,5 @@ export const post = request.bind(null, 'post');
 export const put = request.bind(null, 'put');
 export const del = request.bind(null, 'delete');
 
-/* 
 
-Application ID
-oiDa2v8HOqZIwqdJoMeWVfTiDtUdL2SpT05Sc9Fj
 
-Client key
-3cz2s9k0uBcJujg6K7aL2dwO9T0HJWM4CdbGwIji
-
-JavaScript key
-cf2ha62NkCjWyJ0imCc4g5L7gVKVlrDSLcB4zeGJ
-
-.NET key
-rZNAvplblzkL5NUA3zE7pdwrdjSkRBXnZzFIDcHV
-
-REST API key
-s2STXM9vodNcA8DG28i04ln1l1CFk0Lpx8htmzju
-
-Webhook key
-rA8R6PB1w7qA4Ln08A2qu78Q3X2SKGAMGadROKYY
-
-File key
-59040ce2-a77a-4a57-aff3-e7a916f20fa3
-
-Master key
-GbwK7lvjuOW5DTWgjt3cDMfeOWehdL2aXvTGpVnL
-
-*/
