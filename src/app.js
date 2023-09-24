@@ -1,4 +1,4 @@
-import * as api from './data/api.js';
+import * as api from './data/user.js';
 
 window.api = api;
 
