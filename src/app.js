@@ -1,8 +1,10 @@
 import * as api from './data/user.js';
+import * as roomServise from './data/room.js';
 import * as request from './data/api.js';
 
-window.api = api;
-window.request = request;
+//window.api = api;
+window.roomServise = roomServise;
+//window.request = request;
 
 
 
