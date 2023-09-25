@@ -11,6 +11,24 @@ using back4app
 
 ![Alt text](mdAssets/shema%20level%20security.png)
 
+## API Back4APP 
+### BASICS requests headers:
+
+```js
+headers: {
+            'X-Parse-Application-Id': appId,
+            'X-Parse-REST-API-Key': restApiKey,
+            'X-Parse-JavaScript-Key': apiKey,
+
+        }
+
+        .........
+
+        if (userData) {
+        options.headers['X-Parse-Session-Token'] = userData.sessionToken;
+    }
+```
+
 
 ## -> API reference:
 
