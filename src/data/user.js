@@ -13,12 +13,12 @@ export async function register(email, username, password) {
     }
 
     setUserData(userData);
-    console.log(result);
+
 }
 
 export async function login(email, password) {
 
-    const { email, username, objectId, sessionToken } = post('/login', { email, password });
+    const { username, objectId, sessionToken } = await post('/login', { email, password });
 
     const userData = {
         objectId,
@@ -27,5 +27,5 @@ export async function login(email, password) {
         sessionToken
     }
 
-    console.log(result);
+    setUserData(userData);
 }

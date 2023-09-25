@@ -1,6 +1,8 @@
 import * as api from './data/user.js';
+import * as request from './data/api.js';
 
 window.api = api;
+window.request = request;
 
 
 
