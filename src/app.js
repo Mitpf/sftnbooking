@@ -1,46 +1,14 @@
-import * as api from './data/user.js';
-import * as roomServise from './data/room.js';
-import * as request from './data/api.js';
-
-//window.api = api;
-window.roomServise = roomServise;
-//window.request = request;
+import page from "./lib/page.mjs";
+import { addRender } from "./middlewares/render.js";
+import { createView } from "./views/create.js";
 
 
+page(addRender(document.querySelector('main')));
 
+page('/index.html','/')
+page('/', '/create');
+page('/rooms', () => console.log('catalog'));
+page('/create', createView);
 
+page.start();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* import { render, html } from './lib/lit-html.js';
-import { until } from './lib/directives/until.js';
-
-import page from './lib/page.mjs';
-
-async function dealyed() {
-
-    await new Promise(r => setTimeout(r, 500));
-
-    return html`<h1>hello world</h1>`
-}
-
-
-function home() {
-    render(until(dealyed(), html`<p>Loading ...</p>`), document.body);
-}
-
-page('/', home);
-page.start(); */
