@@ -20,11 +20,12 @@ const listTemplate = (rooms) => html`
 `;
 
 const roomCard = (room) => html`
-<article>
+<article class="room-card">
     <h1>${room.name}</h1>
     <p>Location: ${room.location}</p>
     <p>Beds: ${room.beds}</p>
-
+    
+<p><a class="action" href="/rooms/${room.objectId}">View Details</a> </p>
 </article>
 `
 
