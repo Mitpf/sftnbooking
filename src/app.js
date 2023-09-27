@@ -5,13 +5,25 @@ import { getUserData } from "./util.js";
 import { createView } from "./views/create.js";
 
 
+import * as api from './data/user.js';
+import { catalogView } from "./views/catalog.js";
+window.api = api;
+
 page(addRender(document.querySelector('main')));
 page(addSession(getUserData))
 
-page('/index.html','/')
+page('/index.html', '/')
 page('/', '/create');
-page('/rooms', () => console.log('catalog'));
+page('/rooms', catalogView);
+page('/rooms/:id', ({ params: { id } }) => console.log('details', id));
 page('/create', createView);
 
 page.start();
 
+/* 
+nested destructuring:
+
+page('/rooms/:id', ({ params: { id } }) => console.log('details', id));
+page('/rooms/:id', (ctx) => console.log('details', ctx.params.id));
+
+*/

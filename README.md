@@ -53,3 +53,7 @@ headers: {
 #### owner:
 ![Alt text](mdAssets/ownerPointer.png)
 
+
+> `just to remeber how 'repeat' works:`
+
+![Alt text](mdAssets/repeat.png)
