@@ -7,16 +7,22 @@ import { createView } from "./views/create.js";
 
 import * as api from './data/user.js';
 import { catalogView } from "./views/catalog.js";
+import { loginView } from "./views/login.js";
+import { registerView } from "./views/register.js";
 window.api = api;
 
+
 page(addRender(document.querySelector('main')));
-page(addSession(getUserData))
+page(addSession(getUserData));
+
 
 page('/index.html', '/')
 page('/', '/create');
 page('/rooms', catalogView);
 page('/rooms/:id', ({ params: { id } }) => console.log('details', id));
 page('/create', createView);
+page('/login', loginView);
+page('/register', registerView);
 
 page.start();
 

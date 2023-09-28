@@ -28,7 +28,8 @@ export function createView(ctx) {
     const userId = ctx.user?.objectId;
     const result = await roomService.create({ name, location, beds },userId);
 
-    ctx.page.redirect('rooms'+result.objectId)
+    ctx.page.redirect('/rooms')
+    //ctx.page.redirect('/rooms/'+result.objectId)
 
   }
 }
