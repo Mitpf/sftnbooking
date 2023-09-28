@@ -1,19 +1,19 @@
 import page from "./lib/page.mjs";
 import { addRender } from "./middlewares/render.js";
 import { addSession } from "./middlewares/session.js";
+import { addUserNav } from "./middlewares/usernav.js";
 import { getUserData } from "./util.js";
 import { createView } from "./views/create.js";
-
-
-import * as api from './data/user.js';
 import { catalogView } from "./views/catalog.js";
 import { loginView } from "./views/login.js";
 import { registerView } from "./views/register.js";
-window.api = api;
+import { navTemplate } from "./views/nav.js";
 
 
-page(addRender(document.querySelector('main')));
+
+page(addRender(document.querySelector('main'),document.querySelector('header')));
 page(addSession(getUserData));
+page(addUserNav(navTemplate))
 
 
 page('/index.html', '/')
