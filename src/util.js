@@ -31,3 +31,4 @@ export function submitHandler(callback) {
     callback(data, event.target);
   };
 }
+

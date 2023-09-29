@@ -1,4 +1,4 @@
-import { getUserData } from "../util.js";
+import { clearUserData, getUserData } from "../util.js";
 
 const host = 'https://parseapi.back4app.com';
 const appId = 'oiDa2v8HOqZIwqdJoMeWVfTiDtUdL2SpT05Sc9Fj'; // Application ID
@@ -39,6 +39,9 @@ async function request(method, url, data) {
 
         if (response.ok != true) {
             console.log(result);
+            if (result.code == 209) {
+                clearUserData();
+            }
             throw new Error(result.message || result.error);
         }
 

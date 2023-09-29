@@ -3,14 +3,14 @@
 
 import { html } from '../lib/lit-html.js';
 
-const homeTemplate = (list) =>
+const homeTemplate = () =>
     html`
     <h1>wellcome to sftn sleepover</h1>
         <p>Find accomodation in many locations across the country. 
             <a href="/rooms">Browse catalog</a>
         </p>
         <p>Have a room to offer?
-            <a href="/host">Place an ad right now!</a>
+            <a href="/host"> Place an ad right now!</a>
         </p>
         
         `;
@@ -19,8 +19,7 @@ const homeTemplate = (list) =>
 export async function homeView(ctx) {
     ctx.render(homeTemplate(html`<p>Loading &hellip;</p>`));
 
-    const { results: rooms } = await roomService.getAll();
 
-    ctx.render(homeTemplate(listTemplate(rooms)));
+    ctx.render(homeTemplate());
 }
 

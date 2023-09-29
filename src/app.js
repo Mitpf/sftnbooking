@@ -9,6 +9,7 @@ import { loginView } from "./views/login.js";
 import { registerView } from "./views/register.js";
 import { navTemplate } from "./views/nav.js";
 import { homeView } from "./views/home.js";
+import { logoutAction } from "./views/logout.js";
 
 
 
@@ -24,6 +25,7 @@ page('/rooms/:id', ({ params: { id } }) => console.log('details', id));
 page('/host', createView);
 page('/login', loginView);
 page('/register', registerView);
+page('/logout', logoutAction);
 
 page.start();
 
