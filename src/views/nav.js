@@ -8,7 +8,7 @@ export const navTemplate = (hasUser) => html`
         <a href="/rooms">Rooms</a>
         ${hasUser?
           html`
-        <a href="/create">Host</a>`
+        <a href="/host">Host</a>`
         : html `
         <a href="/login">Login</a>
         <a href="/register">Register</a>

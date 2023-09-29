@@ -8,6 +8,7 @@ import { catalogView } from "./views/catalog.js";
 import { loginView } from "./views/login.js";
 import { registerView } from "./views/register.js";
 import { navTemplate } from "./views/nav.js";
+import { homeView } from "./views/home.js";
 
 
 
@@ -17,10 +18,10 @@ page(addUserNav(navTemplate))
 
 
 page('/index.html', '/')
-page('/', '/create');
+page('/', homeView);
 page('/rooms', catalogView);
 page('/rooms/:id', ({ params: { id } }) => console.log('details', id));
-page('/create', createView);
+page('/host', createView);
 page('/login', loginView);
 page('/register', registerView);
 
