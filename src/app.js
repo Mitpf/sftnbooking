@@ -11,11 +11,13 @@ import { navTemplate } from "./views/nav.js";
 import { homeView } from "./views/home.js";
 import { logoutAction } from "./views/logout.js";
 import { preload } from "./middlewares/preloader.js";
+import { hasUser } from "./middlewares/guards.js";
+import { detailsView } from "./views/details.js";
 
 
 
 
-page(addRender(document.querySelector('main'),document.querySelector('header')));
+page(addRender(document.querySelector('main'), document.querySelector('header')));
 page(addSession(getUserData));
 page(addUserNav(navTemplate))
 
@@ -23,8 +25,8 @@ page(addUserNav(navTemplate))
 page('/index.html', '/')
 page('/', homeView);
 page('/rooms', catalogView);
-page('/rooms/:id',preload('id','rooms'), ({ params: { id }, data }) => console.log('details', id, 'DATA', data)); //destructured ctx
-page('/host', createView);
+page('/rooms/:id', preload('id', 'rooms'), detailsView); //destructured ctx
+page('/host', hasUser(), createView);
 page('/login', loginView);
 page('/register', registerView);
 page('/logout', logoutAction);
