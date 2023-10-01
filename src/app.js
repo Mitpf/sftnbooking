@@ -11,8 +11,9 @@ import { navTemplate } from "./views/nav.js";
 import { homeView } from "./views/home.js";
 import { logoutAction } from "./views/logout.js";
 import { preload } from "./middlewares/preloader.js";
-import { hasUser } from "./middlewares/guards.js";
+import { hasUser, isOwner } from "./middlewares/guards.js";
 import { detailsView } from "./views/details.js";
+import { editView } from "./views/edit.js";
 
 
 
@@ -27,6 +28,7 @@ page('/', homeView);
 page('/rooms', catalogView);
 page('/rooms/:id', preload('id', 'rooms'), detailsView); //destructured ctx
 page('/host', hasUser(), createView);
+page('/edit/:id', preload('id', 'rooms'), isOwner(), editView);
 page('/login', loginView);
 page('/register', registerView);
 page('/logout', logoutAction);
