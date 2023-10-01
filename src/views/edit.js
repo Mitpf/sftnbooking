@@ -11,6 +11,7 @@ const editTemplate = (room, onSubmit) => html`
     <label>Name: <input type="text" name="name" .value=${room.name}></label>
     <label>Location: <input type="text" name="location" .value=${room.location}></label>
     <label>Beds: <input type="number" name="beds" .value=${room.beds}></label>
+    <label>Open for booking: <input type="checkbox" name="openForBooking" .checked=${room.openForBooking}></label>
     <button> Save Changes</button>
   </form>
 `;
@@ -19,15 +20,15 @@ export function editView(ctx) {
   const id = ctx.params.id;
   ctx.render(editTemplate(ctx.data, submitHandler(onSubmit)));
 
-  async function onSubmit({ name, location, beds }) {
+  async function onSubmit({ name, location, beds, openForBooking }) {
     beds = parseInt(beds);
-    //TODO
+    openForBooking = Boolean(openForBooking);
     if (name == '' || location == '' || isNaN(beds)) {
       return alert('All fields are required')
     }
 
     const userId = ctx.user?.objectId;
-    const result = await roomService.update(id, { name, location, beds }, userId);
+    const result = await roomService.update(id, { name, location, beds, openForBooking }, userId);
 
     ctx.page.redirect('/rooms/' + id)
     //ctx.page.redirect('/rooms/'+result.objectId)
