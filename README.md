@@ -57,3 +57,51 @@ headers: {
 > `just to remeber how 'repeat' works:`
 
 ![Alt text](mdAssets/repeat.png)
+
+## filter DataBase request b4app: 
+
+`API Reference > Queries > `
+
+<img src="mdAssets/b4appFilter.png" width="130" 
+         alt="api ref constraints">
+
+
+* Constraints
+
+![Alt text](mdAssets/queries-constraints.png)
+
+* OR-AND operators
+
+![Alt text](mdAssets/orandUsing.png)
+
+* Relational Queries
+
+![Alt text](image.png)
+
+`REST API :`
+> * **Constraints :**
+```JSON
+--data-urlencode 'where={"title": "My post title", "likes": { "$gt": 100 }}' \
+```
+
+> *  **OR operator :**
+```JSON
+--data-urlencode 'where={"$or":[{"likes":{"$gt":1000}}, {"title":"My great post"}], "author": {"__type":"Pointer","className":"_User","objectId":"kzunnPFh5i"}}' \
+```
+> * **Relational Queries :**
+
+```JSON
+--data-urlencode 'where={"post":{"__type":"Pointer","className":"Post","objectId":"<OBJECT_ID>"}}' \
+```
+
+### `=>`
+>  + **`filtering only open for booking rooms :`**
+```js
+const endpoints = {
+    'rooms': (userId) =>
+    
+    `/classes/Room?where=${encodeURIComponent(`{"$or":[{"openForBooking":true},{"owner":${JSON.stringify(createPointer('_User', userId))}}]}`)}`,
+
+    'roomById': '/classes/Room/'
+}
+```

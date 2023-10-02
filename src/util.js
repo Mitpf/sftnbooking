@@ -11,7 +11,7 @@ export function clearUserData() {
 }
 
 export function createPointer(className, objectId) {
-  return { __type: "Pointer", className, objectId };
+  return { __type: 'Pointer', className, objectId };
 }
 
 export function addOwner(record, ownerId) {
