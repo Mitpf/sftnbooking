@@ -34,7 +34,7 @@ export async function catalogView(ctx) {
 
     ctx.render(catalogTemplate(html`<p>Loading &hellip;</p>`));
 
-    const { results: rooms } = await roomService.getAll();
+    const { results: rooms } = await roomService.getAll(ctx.user?.objectId);
 
     if (ctx.user) {
         rooms.forEach(r => r.isOwner = r.owner.objectId == ctx.user.objectId)
