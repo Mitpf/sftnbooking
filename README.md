@@ -76,7 +76,7 @@ headers: {
 
 * Relational Queries
 
-![Alt text](image.png)
+![Alt text](mdAssets/queryRelational.png)
 
 `REST API :`
 > * **Constraints :**
@@ -105,3 +105,7 @@ const endpoints = {
     'roomById': '/classes/Room/'
 }
 ```
+
+## Idea: map of DB relations:
+
+![Alt text](mdAssets/dbrelmap.png)
