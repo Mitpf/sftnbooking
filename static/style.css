@@ -18,3 +18,7 @@ label {
     display: block;
     margin: 5px;
 }
+
+.own-room {
+    background-color: rgb(235, 255, 188);
+}
