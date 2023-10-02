@@ -109,3 +109,11 @@ const endpoints = {
 ## Idea: map of DB relations:
 
 ![Alt text](mdAssets/dbrelmap.png)
+
+#### reservation class creation:
+
+![Alt text](image.png)
+
+> ## type 'Create class & add columns':
+
+![Alt text](image-1.png)
