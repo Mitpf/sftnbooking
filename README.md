@@ -1,6 +1,6 @@
 # sftnbooking
 
-## describtion:
+## description:
 ```
 using back4app
 
@@ -117,3 +117,21 @@ const endpoints = {
 > ## type 'Create class & add columns':
 
 ![Alt text](image-1.png)
+
+
+>____
+ > `documentation about **include** like **populate** in mongoose`
+ >____
+>_
+
+
++ `use this url --> `
+[ https://docs.parseplatform.org/rest/guide/](https://docs.parseplatform.org/rest/guide/)
+
+**Queries > Relational Queries >**
+* `You can also do multi level includes using dot notation. If you wanted to include the post for a comment and the post’s author as well you can do:`
+
+
+```
+--data-urlencode 'include=post.author' \
+```

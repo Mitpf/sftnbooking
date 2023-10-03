@@ -1,3 +1,5 @@
+
+
 export function setUserData(data) {
   sessionStorage.setItem("userData", JSON.stringify(data));
 }
@@ -19,6 +21,19 @@ export function addOwner(record, ownerId) {
   data.owner = createPointer("_User", ownerId);
 
   return data;
+}
+
+export function filterRelation(field, collection, objectId) {
+
+  const relation = {
+    [field]: createPointer(collection, objectId)
+  };
+
+  return encodeURIComponent(JSON.stringify(relation));
+}
+
+export function encodeObject(object) {
+  return encodeURIComponent(JSON.stringify(object));
 }
 
 export function submitHandler(callback) {
