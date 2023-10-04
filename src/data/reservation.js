@@ -4,12 +4,17 @@ import { get, post } from "./api.js";
 
 
 const endpoints = {
-    'reservationsByRoomId': (roomId) => '/classes/Reservation?where=' + encodeObject(filterRelation('room', 'Room', roomId)),
+    'reservationsByRoomId': (roomId) => '/classes/Reservation?where=' + encodeObject(filterRelation('room', 'Room', roomId))+'&include=owner',
     'reservations': '/classes/Reservation'
 }
 
 export async function getRoomId(roomId) {
-    return get(endpoints.reservationsByRoomId(roomId))
+    const data = await get(endpoints.reservationsByRoomId(roomId));
+    data.results.forEach(r => {
+        r.startDate = new Date(r.startDate.iso);
+        r.endDate = new Date(r.endDate.iso);
+    });
+    return data;
 }
 
 export async function create(roomData, userId) {

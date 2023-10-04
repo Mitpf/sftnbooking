@@ -112,11 +112,11 @@ const endpoints = {
 
 #### reservation class creation:
 
-![Alt text](image.png)
+![reservation class creation](mdAssets/reservCreate.png)
 
-> ## type 'Create class & add columns':
+> ## `type 'Create class & add columns':`
 
-![Alt text](image-1.png)
+![Create class & add columns](mdAssets/createClasAddC.png)
 
 
 >____
@@ -138,4 +138,10 @@ const endpoints = {
 
 
 > ` added new column to reservation class: `
-![Alt text](image-2.png)
+
+![addHostToREservation](mdAssets/addHostToREservation.png)
+
+> `class level permission of Reservation :`
+
+ ![Class Level Permission of reservation](mdAssets/permissionRerservation.png)
+
