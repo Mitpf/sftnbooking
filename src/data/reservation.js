@@ -12,11 +12,12 @@ export async function getRoomId(roomId) {
     return get(endpoints.reservationsByRoomId(roomId))
 }
 
-export async function create(roomData, roomId, userId) {
+export async function create(roomData, userId) {
     roomData = addOwner(roomData, userId);
     roomData.startDate = encodeDate(roomData.startDate)
     roomData.endDate = encodeDate(roomData.endDate)
-    roomData.room = createPointer('Room', roomId);
+    roomData.room = createPointer('Room', roomData.room);
+    roomData.host = createPointer('_User', roomData.host);
     return await post(endpoints.reservations, roomData)
 }
 //from documentation:

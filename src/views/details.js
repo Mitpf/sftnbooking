@@ -70,9 +70,11 @@ export async function detailsView(ctx) {
         const reservationData = {
             startDate,
             endDate,
+            room: id,
+            host: ctx.data.owner.objectId
         };
 
-        const result = await reservationService.create(reservationData, id, ctx.user.objectId);
+        const result = await reservationService.create(reservationData,ctx.user.objectId);
 
         ctx.page.redirect('/rooms/' + id);
     }
