@@ -27,6 +27,7 @@ const roomCard = (room) => html`
     <p>Beds: ${room.beds}</p>
     
 <p><a class="action" href="/rooms/${room.objectId}">View Details</a> </p>
+<p>Hosted by: ${room.owner.username} </p>
 </article>
 `
 

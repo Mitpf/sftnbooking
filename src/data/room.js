@@ -9,11 +9,9 @@ const endpoints = {
 }
 
 
-
-
 export async function getAll(userId) {
     if (userId) {
-        console.log(userId)
+     
         return get(endpoints.roomsWithUser(userId));
     } else {
         return get(endpoints.rooms);

@@ -10,7 +10,7 @@ import { registerView } from "./views/register.js";
 import { navTemplate } from "./views/nav.js";
 import { homeView } from "./views/home.js";
 import { logoutAction } from "./views/logout.js";
-import { preload } from "./middlewares/preloader.js";
+import { preloadRoom } from "./middlewares/preloader.js";
 import { hasUser, isOwner } from "./middlewares/guards.js";
 import { detailsView } from "./views/details.js";
 import { editView } from "./views/edit.js";
@@ -26,9 +26,9 @@ page(addUserNav(navTemplate))
 page('/index.html', '/')
 page('/', homeView);
 page('/rooms', catalogView);
-page('/rooms/:id', preload('id', 'rooms'), detailsView); //destructured ctx
+page('/rooms/:id', preloadRoom('id', 'rooms'), detailsView); //destructured ctx
 page('/host', hasUser(), createView);
-page('/edit/:id', preload('id', 'rooms'), isOwner(), editView);
+page('/edit/:id', preloadRoom('id', 'rooms'), isOwner(), editView);
 page('/login', loginView);
 page('/register', registerView);
 page('/logout', logoutAction);
