@@ -25,11 +25,8 @@ export function addOwner(record, ownerId) {
 
 export function filterRelation(field, collection, objectId) {
 
-  const relation = {
-    [field]: createPointer(collection, objectId)
-  };
+  return {[field]: createPointer(collection, objectId)};
 
-  return encodeURIComponent(JSON.stringify(relation));
 }
 
 export function encodeObject(object) {
