@@ -135,3 +135,7 @@ const endpoints = {
 ```
 --data-urlencode 'include=post.author' \
 ```
+
+
+> ` added new column to reservation class: `
+![Alt text](image-2.png)

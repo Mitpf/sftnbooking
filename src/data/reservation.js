@@ -19,6 +19,8 @@ export async function create(roomData, roomId, userId) {
     roomData.room = createPointer('Room', roomId);
     return await post(endpoints.reservations, roomData)
 }
+//from documentation:
+/*  . . .      :{ \"__type\": \"Date\", \"iso\": \"2018-11-06T18:02:52.249Z\" }             .... */
 
 /*  -d "{ \"owner\":{ \"__type\": \"Pointer\", \"className\": \"_User\", \"objectId\": \"<THE_REFERENCED_OBJECT_ID>\" },
 \"room\":{ \"__type\": \"Pointer\", \"className\": \"Room\", \"objectId\": \"<THE_REFERENCED_OBJECT_ID>\" },\"startDate\":{ \"__type\": \"Date\",
